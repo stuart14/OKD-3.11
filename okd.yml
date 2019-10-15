@@ -32,7 +32,7 @@
    - name: "installing Docker latest version"
      yum:
       name: docker-ce
-     state: present
+      state: present
 
    - name: deploy Docker daemon.json
      copy:
