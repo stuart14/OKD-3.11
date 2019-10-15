@@ -1,0 +1,128 @@
+---
+
+- name: install Docker CE and OCP 3.11
+  hosts: localhost
+  gather_facts: yes
+  become: yes 
+  tasks: 
+   - name: "remove OCP residue"
+     command: "rm -rf {{ item }} "
+     with_items:
+     - /etc/ansible/openshift.local.clusterup/
+     - kube/
+
+   - name: "installing Docker Prerequisite packages"
+     yum:
+      name: "{{ item }}"
+     state: latest
+     with_items:
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+
+   - name: "configuring docker-ce repo"
+     get_url:
+      url: https://download.docker.com/linux/centos/docker-ce.repo
+      dest: /etc/yum.repos.d/docker-ce.repo
+     mode: 0644
+
+   - name: "remove existing docker"
+     raw: "yum remove -qy docker*"
+
+   - name: "installing Docker latest version"
+     yum:
+      name: docker-ce
+     state: present
+
+   - name: deploy Docker daemon.json
+     copy:
+      src: /etc/ansible/daemon.json
+      dest: /etc/docker/daemon.json
+
+   - name: " starting and enabling Docker service"
+     service:
+      name: docker
+      state: started
+      enabled: yes
+      
+   - name: "create docker firewalld zone"
+     firewalld: 
+      zone: dockerc
+      state: present
+      permanent: true
+
+   - name: "create docker firewalld source"
+     firewalld: 
+      source: 172.17.0.0/16
+      zone: dockerc
+      state: enabled
+      permanent: true
+
+   - name: "create docker firewalld port"
+     firewalld: 
+      zone: dockerc
+      port: 8443/tcp
+      state: enabled
+      permanent: true
+
+   - name: "create docker firewalld 53 UDP port"
+     firewalld: 
+      zone: dockerc
+      port: 53/udp
+      state: enabled
+      permanent: true
+
+   - name: "create docker firewalld 8053 UDP port"
+     firewalld: 
+      zone: dockerc
+      port: 8053/udp
+      state: enabled
+      permanent: true
+
+   - name: "create local host access via HTTPS"
+     firewalld: 
+      zone: public
+      service: https
+      state: enabled
+      permanent: true
+
+   - name: "create local host port"
+     firewalld: 
+      zone: public
+      port: 8443/tcp
+      state: enabled
+      permanent: true
+
+   - name: "stop and restart firewalld"
+     service:
+      name: firewalld
+      enabled: yes
+      state: restarted
+
+   - name: "installing OCP and OC client"
+     yum:
+      name: "{{ item }}"
+     state: latest
+     with_items:
+      - centos-release-openshift-origin
+      - origin-clients
+
+   - name: "run oc cluster and start OCP" 
+     shell: "oc cluster up --public-hostname={{ansible_default_ipv4.address}}"
+     register: result
+
+   - name: "print output"
+     debug: 
+       var: result
+       verbosity: 2
+
+     
+
+   
+
+
+   
+      
+
+
+
