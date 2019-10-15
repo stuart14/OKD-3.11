@@ -14,7 +14,7 @@
    - name: "installing Docker Prerequisite packages"
      yum:
       name: "{{ item }}"
-     state: latest
+      state: latest
      with_items:
       - yum-utils
       - device-mapper-persistent-data
@@ -102,7 +102,7 @@
    - name: "installing OCP and OC client"
      yum:
       name: "{{ item }}"
-     state: latest
+      state: latest
      with_items:
       - centos-release-openshift-origin
       - origin-clients
