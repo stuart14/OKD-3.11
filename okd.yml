@@ -33,17 +33,17 @@
      yum:
       name: docker-ce
       state: present
+    
+   - name: " starting and enabling Docker service"
+     service:
+      name: docker
+      state: started
+      enabled: yes 
 
    - name: deploy Docker daemon.json
      copy:
       src: /etc/ansible/daemon.json
       dest: /etc/docker/daemon.json
-
-   - name: " starting and enabling Docker service"
-     service:
-      name: docker
-      state: started
-      enabled: yes
       
    - name: "create docker firewalld zone"
      firewalld: 
