@@ -40,19 +40,22 @@ Usage details
 
 You can either use OC console commands or the web console
 
+logon vai the console using > oc login -u system:admin
+
 Logon on to the OpenShift web console using the ip of the host. If we say the CentOS IP was 192.168.1.140 then the URL and logon details would be:
 
 https://192.168.1.140:8443/console
 
 User name: Administrator
-Password: any
+Password: any value
 
 User name: Developer 
-password: any 
+password: any value
 
 Notes:
 
-For virtual box you will need to have a bridged network for external access. 
+For virtual box you will need to have a bridged network for external access.
+
 For external repos you will need to create a secret. further reading is here: 
 https://medium.com/@randima.somathilaka/openshift-origin-deploying-from-external-docker-registry-part-1-9190ae301546
 
