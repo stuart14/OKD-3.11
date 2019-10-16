@@ -25,16 +25,16 @@ Requirements:
 
 Instructions:
 
-This assumes you have a vanila CentOS with full updates installed and Ansible not installed 
+This assumes you have a vanilla CentOS with full updates installed and Ansible not installed 
 
-1: Long onto a shell with root permisions or use sudo 
-2: > yum install epel-release
-3: > yum install ansible 
-4: > cd /etc/ansible
-5: > wget https://github.com/stuart14/OKD-3.11/archive/master.tar.gz
-6: > tar -xvzf  master.tar.gz
-7: > cd /OKD-3.11-master
-8: > ansible-playbook okd.yml -v
+- 1: Long onto a shell with root permisions or use sudo 
+- 2: > yum install epel-release
+- 3: > yum install ansible 
+- 4: > cd /etc/ansible
+- 5: > wget https://github.com/stuart14/OKD-3.11/archive/master.tar.gz
+- 6: > tar -xvzf  master.tar.gz
+- 7: > cd /OKD-3.11-master
+- 8: > ansible-playbook okd.yml -v
 
 Usage details
 
