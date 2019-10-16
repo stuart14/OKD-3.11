@@ -22,7 +22,7 @@ This has been fully tested on the following:
 Requirements:
 - CentOS 7 and above (this will work on RedHat and Fedora although slight modifications may be required for the playbook)
 - Ansible 2.6 and above
-- 4GB RAM, 30GB HDD
+- 8GB RAM, 30GB HDD (rec)
 
 Instructions:
 
