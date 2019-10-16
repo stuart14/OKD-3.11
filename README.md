@@ -1,5 +1,6 @@
 # OKD-3.11
-Ansisble script to install OKD-3.11. 
+
+Anisble script to install OpenShift (OKD-3.11) on a single Linux host. 
 
 How does it work?
 
