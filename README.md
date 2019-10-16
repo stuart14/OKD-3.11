@@ -52,7 +52,7 @@ password: any
 
 Notes:
 
-For virtual box you will need to have a bridged network for external access 
+For virtual box you will need to have a bridged network for external access. 
 For external repos you will need to create a secret. further reading is here: 
 https://medium.com/@randima.somathilaka/openshift-origin-deploying-from-external-docker-registry-part-1-9190ae301546
 
