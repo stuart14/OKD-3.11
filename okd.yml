@@ -8,7 +8,7 @@
    - name: "remove OCP residue"
      command: "rm -rf {{ item }} "
      with_items:
-     - /etc/ansible/openshift.local.clusterup/
+     - /etc/ansible/OKD-3.11-master/openshift.local.clusterup/
      - kube/
 
    - name: "installing Docker Prerequisite packages"
