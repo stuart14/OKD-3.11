@@ -3,7 +3,7 @@ Ansisble script to install OKD-3.11.
 
 How does it work?
 
-This uses the the OC command binaries to call Docker on a local Linux host to bootstrap a local OKD (OpenShift 3.11) containerized cluster. The ideal use case is for demo enviroments where there is a need to quickly provsion a full Openshift platform and demonstrate and test fuctionailty. The platform can be spun up in under 5 mins. Once used the enviroment will be disposed upon reboot.
+This uses the the OC command binaries to call Docker on a local Linux host to bootstrap a local OKD (OpenShift 3.11) containerized cluster. The ideal use case is for demo enviroments where there is a need to quickly provsion a full Openshift platform and demonstrate and test fuctionailty. The platform can be spun up in under 5 mins. Once used, the enviroment will be disposed upon reboot.
 
 How is this diffrent to Minishift?
 
@@ -25,7 +25,7 @@ Requirements:
 
 Instructions:
 
-This assumes you have a vannila CentOS with full updates installed and Ansible not installed 
+This assumes you have a vanila CentOS with full updates installed and Ansible not installed 
 
 1: Long onto a shell with root permisions or use sudo 
 2: > yum install epel-release
