@@ -42,7 +42,7 @@
 
    - name: deploy Docker daemon.json
      copy:
-      src: /etc/ansible/daemon.json
+      src: /etc/OKD-3.11-master/ansible/daemon.json
       dest: /etc/docker/daemon.json
       
    - name: "create docker firewalld zone"
