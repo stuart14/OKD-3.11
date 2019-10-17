@@ -4,7 +4,7 @@ Anisble script to install OpenShift (OKD-3.11) on a single Linux host.
 
 How does it work?
 
-This script uses the OC command binaries(oc cluster up)t o call Docker on a local Linux host to bootstrap a local OKD (OpenShift 3.11) containerized cluster and provisions a registry, router, initial templates, and a default project. The ideal use case is for demo environments where there is a need to quickly provision a full OpenShift platform and demonstrate and test functionality. The platform can be spun up in under 5 mins. Once used, the environment will be disposed upon reboot. There is no hypervisor dependency and this script has been tested running on a virtual machine in AWS Cloud, VMware ESXi and Virtual Box.
+This script uses the OC command binaries(oc cluster up)to call Docker on a local Linux host to bootstrap a local OKD (OpenShift 3.11) containerized cluster and provisions a registry, router, initial templates, and a default project. The ideal use case is for demo environments where there is a need to quickly provision a full OpenShift platform and demonstrate and test functionality. The platform can be spun up in under 5 mins. Once used, the environment will be disposed upon reboot. There is no hypervisor dependency and this script has been tested running on a virtual machine in AWS Cloud, VMware ESXi and Virtual Box.
 
 How is this different to Minishift?
 
