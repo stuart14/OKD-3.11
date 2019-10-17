@@ -104,15 +104,15 @@
       name: firewalld
       enabled: yes
       state: restarted
-
-   - name: "installing OCP"
-     yum:
-      name: http://mirror.centos.org/centos/7/paas/x86_64/openshift-origin311/origin-3.11.0-1.el7.git.0.62803d0.x86_64.rpm
-      state: present 
       
    - name: "installing OC client"
      yum:
       name: http://mirror.centos.org/centos/7/paas/x86_64/openshift-origin311/origin-clients-3.11.0-1.el7.git.0.62803d0.x86_64.rpm
+      state: present
+
+   - name: "installing OCP"
+     yum:
+      name: http://mirror.centos.org/centos/7/paas/x86_64/openshift-origin311/origin-3.11.0-1.el7.git.0.62803d0.x86_64.rpm
       state: present 
   
    - name: "run oc cluster and start OCP" 
