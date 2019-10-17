@@ -11,15 +11,15 @@
      - /etc/ansible/OKD-3.11-master/openshift.local.clusterup/
      - kube/
      
-   - name: "installing prerequisite packages"
+   - name: "installing Docker Prerequisite packages"
      yum:
-      name: "{{ item }}
+      name: "{{ item }}"
       state: latest
      with_items:
       - yum-utils
       - device-mapper-persistent-data
       - lvm2
-  
+
    - name: "configuring docker-ce repo"
      get_url:
       url: https://download.docker.com/linux/centos/docker-ce.repo
