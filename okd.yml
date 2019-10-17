@@ -40,10 +40,16 @@
       state: started
       enabled: yes 
 
-   - name: deploy Docker daemon.json
+   - name: "deploy Docker daemon.json"
      copy:
       src: /etc/ansible/OKD-3.11-master/daemon.json
       dest: /etc/docker/daemon.json
+      
+   - name: "enable firewalld"
+     service:
+      name: firewalld
+      state: started
+      enabled: yes
       
    - name: "create docker firewalld zone"
      firewalld: 
@@ -99,14 +105,16 @@
       enabled: yes
       state: restarted
 
-   - name: "installing OCP and OC client"
+   - name: "installing OCP"
      yum:
-      name: "{{ item }}"
-      state: latest
-     with_items:
-      - centos-release-openshift-origin
-      - origin-clients
-
+      name: http://mirror.centos.org/centos/7/paas/x86_64/openshift-origin311/origin-3.11.0-1.el7.git.0.62803d0.x86_64.rpm
+      state: present 
+      
+   - name: "installing OC client"
+     yum:
+      name: http://mirror.centos.org/centos/7/paas/x86_64/openshift-origin311/origin-clients-3.11.0-1.el7.git.0.62803d0.x86_64.rpm
+      state: present 
+  
    - name: "run oc cluster and start OCP" 
      shell: "oc cluster up --public-hostname={{ansible_default_ipv4.address}}"
      register: result
