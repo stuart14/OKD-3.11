@@ -8,7 +8,7 @@ This uses the the OC command binaries to call Docker on a local Linux host to bo
 
 How is this diffrent to Minishift?
 
-Minishift requires a supported type 2 hypervsior and can be "clunky". Minishift is more supported to reusable enviroments and takes care of the VM provsioning via the hypervisor
+Minishift requires a supported type 2 hypervsior and can be "clunky". Minishift is more supported to reusable enviroments and takes care of the VM provsioning via the hypervisor. Minishift actually uses the same binaries (OC command) under the hood to provsion the OpenShift platform as this script.
 
 How does the Ansible script work?
 
