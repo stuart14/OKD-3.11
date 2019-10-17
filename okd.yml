@@ -19,7 +19,6 @@
       - yum-utils
       - device-mapper-persistent-data
       - lvm2
-      - firewalld
   
    - name: "configuring docker-ce repo"
       get_url:
