@@ -4,15 +4,15 @@ Anisble script to install OpenShift (OKD-3.11) on a single Linux host.
 
 How does it work?
 
-This uses the the OC command binaries to call Docker on a local Linux host to bootstrap a local OKD (OpenShift 3.11) containerized cluster. The ideal use case is for demo enviroments where there is a need to quickly provsion a full Openshift platform and demonstrate and test fuctionailty. The platform can be spun up in under 5 mins. Once used, the enviroment will be disposed upon reboot.
+This script uses the OC command binaries to call Docker on a local Linux host to bootstrap a local OKD (OpenShift 3.11) containerized cluster. The ideal use case is for demo environments where there is a need to quickly provision a full OpenShift platform and demonstrate and test functionality. The platform can be spun up in under 5 mins. Once used, the environment will be disposed upon reboot. There is no hypervisor dependency and this script has been tested running on a virtual machine in AWS Cloud, VMware ESXi and Virtual Box.
 
-How is this diffrent to Minishift?
+How is this different to Minishift?
 
-Minishift requires a supported type 2 hypervsior and can be "clunky". Minishift is more supported to reusable enviroments and takes care of the VM provsioning via the hypervisor. Minishift actually uses the same binaries (OC command) under the hood to provsion the OpenShift platform as this script.
+Minishift requires a supported type 2 hypervisor and can be "clunky". Minishift is more supported to reusable environments and takes care of the VM provisioning via the hypervisor. Minishift actually uses the same binaries (OC command) under the hood to provision the OpenShift platform as this script.
 
 How does the Ansible script work?
 
-The script cleans up the prevous installation, installs docker, configures firewalld for docker, configures firewalld for host external access and spins up the OpenShift cluster on docker
+The script cleans up the previous installation, installs docker, configures firewalld for docker, configures firewalld for host external access and spins up the OpenShift cluster on docker
 
 This has been fully tested on the following:
 - Macbook running macOS Mojave 10.14.1
@@ -22,13 +22,14 @@ This has been fully tested on the following:
 Requirements:
 - CentOS 7 and above (this will work on RedHat and Fedora although slight modifications may be required for the playbook)
 - Ansible 2.6 and above
+- Firewalld
 - 8GB RAM, 30GB HDD (rec)
 
 Instructions:
 
 This assumes you have a vanilla CentOS with full updates installed and Ansible not installed 
 
-- 1: Long onto a shell with root permisions or use sudo 
+- 1: Long onto a shell with root permissions or use sudo 
 - 2: > yum install epel-release
 - 3: > yum install ansible 
 - 4: > cd /etc/ansible
@@ -41,7 +42,7 @@ Usage details
 
 You can either use OC console commands or the web console
 
-logon vai the console using > oc login -u system:admin
+logon via the console using > oc login -u system:admin
 
 Logon on to the OpenShift web console using the ip of the host. If we say the CentOS IP was 192.168.1.140 then the URL and logon details would be:
 
@@ -59,6 +60,7 @@ For virtual box you will need to have a bridged network for external access.
 
 For external repos you will need to create a secret. further reading is here: 
 https://medium.com/@randima.somathilaka/openshift-origin-deploying-from-external-docker-registry-part-1-9190ae301546
+
 
 
 
