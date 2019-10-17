@@ -21,9 +21,9 @@
       - lvm2
       - firewalld
       - bash-completion 
-
+      
    - name: "configuring docker-ce repo"
-     get_url:
+      get_url:
       url: https://download.docker.com/linux/centos/docker-ce.repo
       dest: /etc/yum.repos.d/docker-ce.repo
      mode: 0644
