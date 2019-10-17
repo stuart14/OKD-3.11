@@ -9,7 +9,7 @@
      command: "rm -rf {{ item }} "
      with_items:
      - /etc/ansible/OKD-3.11-master/openshift.local.clusterup/
-     - kube/
+     - .kube/
      
    - name: "installing Docker Prerequisite packages"
      yum:
