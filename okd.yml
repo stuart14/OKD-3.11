@@ -22,8 +22,8 @@
       
    - name: Add Docker repo
      get_url:
-       url: https://download.docker.com/linux/centos/docker-ce.repo
-       dest: /etc/yum.repos.d/docer-ce.repo
+      url: https://download.docker.com/linux/centos/docker-ce.repo
+      dest: /etc/yum.repos.d/docer-ce.repo
 
    - name: "remove existing docker"
      raw: "yum remove -qy docker*"
