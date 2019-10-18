@@ -35,7 +35,7 @@ This assumes you have a vanilla CentOS with full updates installed and Ansible n
 - 4: > cd /etc/ansible
 - 5: > wget https://github.com/stuart14/OKD-3.11/archive/master.tar.gz
 - 6: > tar -xvzf  master.tar.gz
-- 7: > cd /OKD-3.11-master
+- 7: > cd OKD-3.11-master
 - 8: > ansible-playbook okd.yml -v
 
 Usage details
