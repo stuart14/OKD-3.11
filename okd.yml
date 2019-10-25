@@ -83,11 +83,18 @@
       port: 8053/udp
       state: enabled
       permanent: true
-
+      
    - name: "create local host access via HTTPS"
      firewalld: 
       zone: public
       service: https
+      state: enabled
+      permanent: true
+
+   - name: "create local host access via HTTP"
+     firewalld: 
+      zone: public
+      service: http
       state: enabled
       permanent: true
 
