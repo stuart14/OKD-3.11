@@ -12,7 +12,7 @@ Minishift requires a supported type 2 hypervisor and can be "clunky". Minishift 
 
 How does the Ansible script work?
 
-The script cleans up the previous installation, installs docker, configures firewalld for docker, configures firewalld for host external access and spins up the OpenShift cluster on docker
+The script cleans up the previous installation, installs docker, configures firewalld for docker, configures firewalld for host external access and spins up the OpenShift cluster on Docker
 
 This has been fully tested on the following:
 - Macbook running macOS Mojave 10.14.1
