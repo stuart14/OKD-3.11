@@ -61,6 +61,7 @@ For virtual box you will need to have a bridged network for external access.
 For external repos you will need to create a secret. further reading is here: 
 https://medium.com/@randima.somathilaka/openshift-origin-deploying-from-external-docker-registry-part-1-9190ae301546
 
+https://github.com/openshift/origin/blob/v4.0.0-alpha.0/docs/cluster_up_down.md
 
 
 
